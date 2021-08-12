@@ -50,7 +50,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Find_route.urls' # стандартные урлы тут хранятся
+ROOT_URLCONF = 'Find_route.urls'# стандартные урлы тут хранятся
+
 
 TEMPLATES = [
     {

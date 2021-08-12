@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+
+{% block Title %} <title> Список городов</title>{% endblock Title %}
+
+{% block content %}
+<h1>Список городов</h1>
+            {% for object in objects_list %}
+                <p>{{ object.name }}</p>
+            {% endfor %}
+
+{% endblock content %}

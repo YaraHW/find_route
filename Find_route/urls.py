@@ -20,4 +20,6 @@ from cities import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
+    path('spisok_gorodov/', views.spisok_gorodov, name='spisok_gorodov'),
+
 ]
