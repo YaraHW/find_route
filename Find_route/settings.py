@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'Find_route.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'gbpltw13',
+        'NAME': 'mydb',
+        'USER': 'myuser',
+        'PASSWORD': 'mypass',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
