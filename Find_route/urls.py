@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from cities import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    re_path(r'^$', views.home, name ='home'), # это та же стартовая страница, но с использованием функции re_path. Ее используют когда применяют регулярные выражения. (r'^$' - означает пустую строку, т.е ссылка в корень сайта)
     path('spisok_gorodov/', views.spisok_gorodov, name='spisok_gorodov'),
+    path('spisok_gorodov/<int:pk>/', views.spisok_gorodov), # int:pk - инт это номер записи из БД, а pk это параметр ф-ии spisok_gorodov, если запись с таким id есть то он отобразит
+    path('spisok_gorodov/details/', views.spisok_gorodov),
 
 ]

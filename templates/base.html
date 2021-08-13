@@ -1,4 +1,4 @@
-
+{% url 'spisok_gorodov' as spisok_gorodov_url%}
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,20 +10,20 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
   </head>
+
 
   <body>
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #d7f5ee;">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="{% url 'home'%}">FindRoute</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item
+              {% if request.path == spisok_gorodov_url%} active {% endif %} ">
+                <a class="nav-link" href="{% url 'spisok_gorodov' %}">Города </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Features</a>
@@ -45,7 +45,7 @@
           </div>
         </nav>
 <div class="container">
-        {% block content %}{% endblock content %}
+        {% block content %}  {% endblock content %}
 </div>
 
 
@@ -56,4 +56,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
+
+
 </html>

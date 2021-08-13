@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block Title %} <title> {{ object.name }}</title>{% endblock Title %}
+
+
+{% block content %}
+<style>
+   .btn {
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #8C959D; /* Серый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
+   }
+  </style>
+
+    <h1>Город</h1>
+    <p>Название города: {{ object.name }}</p>
+
+    <div class="col-md-4">
+        <a href="http://127.0.0.1:8000/spisok_gorodov/" class="btn">Возврат к списку городов</a>
+    </div>
+
+{% endblock content %}
+
