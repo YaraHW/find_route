@@ -6,8 +6,8 @@
 
 {% block content %}
 <h1>Список городов</h1>
-            {% for object in objects_list %}
-                <p>{{ object.name }}</p>
+            {% for gorod in nabor_gorodov %}
+                <p>{{ gorod.name }}</p>
             {% endfor %}
 
 {% endblock content %}
